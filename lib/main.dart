@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(SFLaundry());
 }
 
-class MyApp extends StatelessWidget {
+class SFLaundry extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -92,15 +92,32 @@ class _MyHomePageState extends State<MyHomePage> {
           // axis because Columns are vertical (the cross axis would be
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'Validar CEP:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
+          Row(
+              children: <Widget> [
+                TextField(
+                  obscureText: true,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'CEP',
+                  ),
+                ),
+              ],
+          ),
+            //Spacer(flex: 1),
+          Row(
+             children: <Widget> [
+            ElevatedButton(
+              child: Text('Validar CEP'),
+              onPressed: () {
+                print('Botão Validar CEP pressionado');
+              },
+            )
+            //  Text(
+            //   '$_counter',
+            //   style: Theme.of(context).textTheme.headline4,
+            // ),
+             ]
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
