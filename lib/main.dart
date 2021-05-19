@@ -22,7 +22,7 @@ class SFLaundry extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Lavanderia da Samantha - Titulo da Pagina'),
+      home: MyHomePage(title: 'Lavanderia da Samantha - Início'),
     );
   }
 }
@@ -74,50 +74,71 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-          Row(
-              children: <Widget> [
-                TextField(
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'CEP',
+        child: Container(
+          margin: const EdgeInsets.only(left: 20.0, right: 20.0, top: 20.0),
+          alignment: Alignment.center,
+          // Center is a layout widget. It takes a single child and positions it
+          // in the middle of the parent.
+          child:
+              Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+            //SizedBox(
+            //width: 50,
+            Expanded(
+              flex: 3,
+              child: Column(
+                // Column is also a layout widget. It takes a list of children and
+                // arranges them vertically. By default, it sizes itself to fit its
+                // children horizontally, and tries to be as tall as its parent.
+                //
+                // Invoke "debug painting" (press "p" in the console, choose the
+                // "Toggle Debug Paint" action from the Flutter Inspector in Android
+                // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
+                // to see the wireframe for each widget.
+                //
+                // Column has various properties to control how it sizes itself and
+                // how it positions its children. Here we use mainAxisAlignment to
+                // center the children vertically; the main axis here is the vertical
+                // axis because Columns are vertical (the cross axis would be
+                // horizontal).
+                //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                //child: Row(
+                children: <Widget>[
+                  TextField(
+                    obscureText: true,
+
+                    //expands: true,
+                    //minLines: null,
+                    //maxLines: null,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'CEP',
+                      isDense: true,
+                      // contentPadding: EdgeInsets.all(8),
+                      //   contentPadding: const EdgeInsets.symmetric(vertical: 40.0),
+                    ),
                   ),
-                ),
-              ],
-          ),
-            //Spacer(flex: 1),
-          Row(
-             children: <Widget> [
-            ElevatedButton(
-              child: Text('Validar CEP'),
-              onPressed: () {
-                print('Botão Validar CEP pressionado');
-              },
-            )
-            //  Text(
-            //   '$_counter',
-            //   style: Theme.of(context).textTheme.headline4,
-            // ),
-             ]
-          ),
+                ],
+              ),
+            ),
+            Expanded(
+              flex: 4,
+              child: Column(
+                  //Spacer(flex: 1),
+                  //Row(
+                  children: <Widget>[
+                    ElevatedButton(
+                      child: Text('Validar CEP'),
+                      onPressed: () {
+                        print('Botão Validar CEP pressionado');
+                      },
+                    )
+                    //  Text(
+                    //   '$_counter',
+                    //   style: Theme.of(context).textTheme.headline4,
+                    // ),
+                  ]),
+            ),
+          ]),
         ),
       ),
       floatingActionButton: FloatingActionButton(
